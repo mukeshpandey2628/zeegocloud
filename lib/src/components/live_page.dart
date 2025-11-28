@@ -226,7 +226,18 @@ class _ZegoLiveAudioRoomPageState extends State<ZegoLiveAudioRoomPage>
         child: Stack(
           children: [
             Container(
-              decoration: BoxDecoration(color: Colors.transparent),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [
+                    const Color(0xFF00008B).withOpacity(0.0),
+                    const Color(0xFF800080).withOpacity(0.0),
+                    const Color(0xFF006400).withOpacity(0.0),
+                  ],
+                  stops: const [0.3, 0.5, 0.9], // color ratio
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
             ),
             widget.config.background ?? Container(),
           ],
